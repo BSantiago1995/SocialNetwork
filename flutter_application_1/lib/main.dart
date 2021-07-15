@@ -1,8 +1,8 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:flutter_application_1/User/UI/Screem/Home.dart';
 
 
-///BRYAN SANTIAGO ORTIZ SILVA -- 4TO DESARROLLO
+///BRYAN SANTIAGO ORTIZ SILVA -- 5TO DESARROLLO
 void main() {
   runApp(MyApp());
 }
@@ -34,11 +34,12 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+*/
 
 
-
-/*import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_application_1/User/BLOC/BLOC_user.dart';
+import 'package:flutter_application_1/User/UI/Screem/Home.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 void main() {
@@ -52,15 +53,14 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
       child: 
       MaterialApp(
-      
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-     // home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-    ,
-     bloc:UserBloc ,);
+      title: 'Login',
+      home: Home(),
+      initialRoute: 'main',
+      routes: {
+      'main': (context) => Home(),
+     }
+    ),
+     bloc:UserBloc());
     
   }
-}*/
+}

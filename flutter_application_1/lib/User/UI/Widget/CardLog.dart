@@ -1,13 +1,14 @@
-import 'dart:ffi';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/User/UI/Widget/GradienteLog.dart';
 import 'package:flutter_application_1/User/UI/Widget/ButtonInk.dart';
 import 'package:flutter_application_1/User/UI/Widget/ImgSocial.dart';
+//import 'package:flutter_application_1/User/UI/Widget/TextInput.dart';
 import 'package:flutter_application_1/User/UI/Widget/Texto.dart';
 
 class CardLog extends StatelessWidget {
   @override
+  TextEditingController controller= TextEditingController(text: "");
   Widget build(BuildContext context) {
     final card = Stack(children: [
       GradienteLog(),
@@ -58,6 +59,9 @@ class CardLog extends StatelessWidget {
               hintStyle: TextStyle(color: Colors.white, fontSize: 13)),
         ),
       ),
+      
+      //TextInput(hint: "Email or Phone Number",top1:270.0 ,left1: 75,inputType:TextInputType.emailAddress,maxlines: 10,controller:),
+      //TextInput(hint: "Password",top1:325.0 ,left1: 75,inputType:TextInputType.emailAddress,maxlines: 10,controller:controller),
       Container(
         margin: EdgeInsets.only(top: 380, left: 220),
         child: TextOri("Recover Account?",12)

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/User/UI/Widget/CardLog.dart';
+import 'package:flutter_application_1/User/UI/Screem/Profile.dart';
+//import 'package:flutter_application_1/User/UI/Widget/CardLog.dart';
 
 
 class Home extends StatelessWidget {
@@ -8,8 +9,8 @@ class Home extends StatelessWidget {
     return Scaffold(
       body: Stack(
          children: [
-           
-           CardLog()
+           //CardLog()
+            Profile()
          ],
       ),
     );
