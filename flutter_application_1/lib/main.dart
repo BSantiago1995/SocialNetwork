@@ -41,8 +41,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/User/BLOC/BLOC_user.dart';
 import 'package:flutter_application_1/User/UI/Screem/Home.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async{
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 

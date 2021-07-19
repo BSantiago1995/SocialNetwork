@@ -1,13 +1,36 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/User/BLOC/BLOC_user.dart';
+import 'package:flutter_application_1/User/UI/Screem/Home.dart';
 import 'package:flutter_application_1/User/UI/Widget/SocialButton.dart';
 import 'package:flutter_application_1/User/UI/Widget/TextInput.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 class Profile extends StatelessWidget{
+  UserBloc blocUser;
   final _controllerUserName=TextEditingController(); //_ antes define el scope o identifica como private para el evento unico, es de dart mas no flutter
   final _controllerPassword=TextEditingController();
   
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context){
+    blocUser = BlocProvider.of(context);
+    return _controlSession();
+  }
+  Widget _controlSession(){
+    return StreamBuilder(
+      stream: blocUser.authStatus,
+      builder: (
+        BuildContext context,
+        AsyncSnapshot snapshot
+      ){
+        if(snapshot.hasData || snapshot.hasError){
+            return Loginapp();
+        }else{
+          return Home();
+        }
+      }
+      );
+  }
+  Widget Loginapp() {
     return Scaffold(
       body:Container(
         child: ListView(
