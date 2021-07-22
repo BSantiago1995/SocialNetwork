@@ -39,7 +39,8 @@ class MyApp extends StatelessWidget {
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/User/BLOC/BLOC_user.dart';
-import 'package:flutter_application_1/User/UI/Screem/Home.dart';
+import 'package:flutter_application_1/User/UI/Screem/Login.dart';
+
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:firebase_core/firebase_core.dart';
 
@@ -57,10 +58,10 @@ class MyApp extends StatelessWidget {
       child: 
       MaterialApp(
       title: 'Login',
-      home: Home(),
+      home: Login(),
       initialRoute: 'main',
       routes: {
-      'main': (context) => Home(),
+      'main': (context) => Login(),
      }
     ),
      bloc:UserBloc());

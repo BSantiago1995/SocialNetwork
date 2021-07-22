@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/User/BLOC/BLOC_user.dart';
 import 'package:flutter_application_1/User/UI/Screem/Home.dart';
+import 'package:flutter_application_1/User/UI/Screem/Profile.dart';
 import 'package:flutter_application_1/User/UI/Widget/SocialButton.dart';
 import 'package:flutter_application_1/User/UI/Widget/TextInput.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
-class Profile extends StatelessWidget{
+class Login extends StatelessWidget{
   UserBloc blocUser;
   final _controllerUserName=TextEditingController(); //_ antes define el scope o identifica como private para el evento unico, es de dart mas no flutter
   final _controllerPassword=TextEditingController();
@@ -23,14 +25,14 @@ class Profile extends StatelessWidget{
         AsyncSnapshot snapshot
       ){
         if(snapshot.hasData || snapshot.hasError){
-            return Loginapp();
+            return loginApp();
         }else{
-          return Home();
+          return Profile();
         }
       }
       );
   }
-  Widget Loginapp() {
+  Widget loginApp() {
     return Scaffold(
       body:Container(
         child: ListView(
@@ -73,7 +75,7 @@ class Profile extends StatelessWidget{
               ),
             ),
           ),
-          SocialButton(textc: "Login with Google",onPressed:(){} ,widthc: 30,heigthc: 35,)
+          SocialButton(textc: "Login with Google",onPressed:(){blocUser.singIn().then((UserCredential user)=> print("Usted se ha autenticado como ${user.user}"));} ,widthc: 30,heigthc: 35,)
           ],
         ),
       )
