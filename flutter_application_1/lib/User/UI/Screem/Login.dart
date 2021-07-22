@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/User/BLOC/BLOC_user.dart';
-import 'package:flutter_application_1/User/UI/Screem/Home.dart';
+//import 'package:flutter_application_1/User/UI/Screem/Home.dart';
 import 'package:flutter_application_1/User/UI/Screem/Profile.dart';
 import 'package:flutter_application_1/User/UI/Widget/SocialButton.dart';
 import 'package:flutter_application_1/User/UI/Widget/TextInput.dart';
@@ -24,7 +24,7 @@ class Login extends StatelessWidget{
         BuildContext context,
         AsyncSnapshot snapshot
       ){
-        if(snapshot.hasData || snapshot.hasError){
+        if(!snapshot.hasData || snapshot.hasError){
             return loginApp();
         }else{
           return Profile();
